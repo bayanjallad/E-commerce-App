@@ -2,40 +2,40 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  final Function()? btnOnPressed;
-  final double? btnRiduse;
-  final double? btnWidth;
-  final double? btnHight;
-  final Widget? btnWidget;
-  final double? btnElevated;
-  final Color? btnColor;
-  final Color? btnBorderSide;
+  final Function()? OnPressed;
+  final double? Riduse;
+  final double? Width;
+  final double? Hight;
+  final Widget? widget;
+  final double? Elevated;
+  final Color? color;
+  final Color? borderSide;
 
   const CustomButton({
     super.key,
-    this.btnOnPressed,
-    this.btnWidget,
-    required this.btnRiduse,
-    required this.btnWidth,
-    required this.btnHight,
-    this.btnElevated,
-    this.btnColor,
-    this.btnBorderSide,
+    this.OnPressed,
+    this.widget,
+    required this.Riduse,
+    required this.Width,
+    required this.Hight,
+    this.Elevated,
+    this.color,
+    this.borderSide,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: btnOnPressed,
+        onPressed: OnPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: btnColor,
-          elevation: btnElevated,
-          fixedSize: Size(btnWidth!, btnHight!),
+          backgroundColor: color,
+          elevation: Elevated,
+          fixedSize: Size(Width!, Hight!),
           shape: RoundedRectangleBorder(
-            side: BorderSide(color: btnBorderSide!),
-            borderRadius: BorderRadius.circular(btnRiduse!),
+            side: BorderSide(color: borderSide!),
+            borderRadius: BorderRadius.circular(Riduse!),
           ),
         ),
-        child: btnWidget);
+        child: widget);
   }
 }

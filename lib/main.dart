@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'config/responsive.dart';
-import 'features/splash_and_onbording/splashscreen.dart';
+import 'features/splash_screen/view/splashscreen.dart';
 
 
 

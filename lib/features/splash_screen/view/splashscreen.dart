@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../config/responsive.dart';
-import '../../core/resources/color.dart';
-import '../../core/resources/string.dart';
-import 'onBording.dart';
+import '../../../config/responsive.dart';
+import '../../../core/resources/color.dart';
+import '../../../core/resources/string.dart';
+import '../../onbording/views/onBording.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({super.key});
@@ -18,7 +18,7 @@ class _SplashscreenPageState extends State<SplashScreenPage> {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 7),
+      const Duration(seconds: 1),
       () {
         Navigator.pushReplacement(
           context,
