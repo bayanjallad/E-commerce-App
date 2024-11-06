@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import '../resources/color.dart';
 
@@ -28,7 +30,7 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
        validator: (value) {
       if (value == null || value.isEmpty) {
-        return 'filed ${hintText} should be not empty !';
+        return 'filed $hintText should be not empty !';
       }
       return null;
     },
@@ -44,7 +46,7 @@ class CustomTextField extends StatelessWidget {
         suffix: suffix,
         prefix: prefix,
         hintText: hintText,
-        hintStyle: TextStyle(color: gray, fontSize: 14),
+        hintStyle: const TextStyle(color: gray, fontSize: 14),
         filled: true,
         fillColor: fillColor,
       ),
