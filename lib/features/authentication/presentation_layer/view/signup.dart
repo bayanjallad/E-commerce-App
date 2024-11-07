@@ -10,6 +10,7 @@ TextEditingController _nameController = TextEditingController();
 TextEditingController _emailController = TextEditingController();
 TextEditingController _passwordController = TextEditingController();
 GlobalKey<FormState> formKey = GlobalKey();
+
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
 

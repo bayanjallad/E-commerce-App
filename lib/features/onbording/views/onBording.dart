@@ -5,6 +5,7 @@ import '../../../core/resources/color.dart';
 import '../../../core/resources/padding.dart';
 import '../../../core/resources/string.dart';
 import '../../../core/widgets/custom_button.dart';
+import '../../authentication/presentation_layer/view/signup.dart';
 import 'first_screen.dart';
 import 'second_screen.dart';
 import 'third_screen.dart';
@@ -75,9 +76,13 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                   Riduse: 75,
                   Elevated: 1,
                   OnPressed: () {
-                    _controller.animateToPage(_index + 1,
+                    if (_index==2) {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignUp(),));
+                      
+                    }else{_controller.animateToPage(_index + 1,
                         duration: const Duration(milliseconds: 250),
-                        curve: Curves.linear);
+                        curve: Curves.linear);}
+                    
                   },
                   borderSide: primaryColor,
                   color: primaryColor,
