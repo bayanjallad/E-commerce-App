@@ -22,9 +22,11 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: white,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
+          Flexible(
             child: PageView(
               onPageChanged: (value) {
                 setState(() {
@@ -47,7 +49,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
             ],
           ),
           Padding(
-            padding: onlyButtomPadding(0.02),
+            padding: onlyButtomPadding(0.1),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

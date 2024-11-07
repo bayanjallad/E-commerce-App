@@ -28,28 +28,40 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-       validator: (value) {
-      if (value == null || value.isEmpty) {
-        return 'filed $hintText should be not empty !';
-      }
-      return null;
-    },
-    onSaved: (value) {
-      controller!.text = value!;
-    },      controller: controller,
-      maxLines: maxLines,
-      keyboardType: keyboardType,
-      obscureText: obscureText!,
-      onTap: onTap,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(6),),
-        suffix: suffix,
-        prefix: prefix,
-        hintText: hintText,
-        hintStyle: const TextStyle(color: gray, fontSize: 14),
-        filled: true,
-        fillColor: fillColor,
-      ),
-    );
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'filed $hintText should be not empty !';
+          }
+          return null;
+        },
+        onSaved: (value) {
+          controller!.text = value!;
+        },
+        controller: controller,
+        maxLines: maxLines,
+        keyboardType: keyboardType,
+        obscureText: obscureText!,
+        onTap: onTap,
+        decoration: InputDecoration(
+          hintText: hintText,
+          filled: true,
+          fillColor: white,
+          errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide:
+                  const BorderSide(color: red, width: 0.6, strokeAlign: 2)),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide:
+                  const BorderSide(color: white, width: 0.6, strokeAlign: 2)),
+          focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide:
+                  const BorderSide(color: primaryColor, width: 0.6, strokeAlign: 2)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(
+                  color: primaryColor, width: 0.6, strokeAlign: 2)),
+        ));
   }
 }
