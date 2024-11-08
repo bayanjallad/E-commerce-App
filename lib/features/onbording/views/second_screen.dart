@@ -11,7 +11,7 @@ class SecondScreen extends StatelessWidget {
       children: [
         Padding(
           padding: onlyTopPadding(0.2),
-          child: Image.asset("images/onbording2.png"),
+          child: Image.asset("assets/images/onbording2.png"),
         ),
         Padding(
           padding: onlyTopPadding(0.02),

@@ -1,19 +1,19 @@
-import 'package:e_commerce_app/config/responsive.dart';
+import 'package:e_commerce_app/features/authentication/presentation_layer/view/RecoveryPassword.dart';
+import 'package:e_commerce_app/features/authentication/presentation_layer/view/signup.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/resources/color.dart';
 import '../../../../core/resources/padding.dart';
 import '../../../../core/resources/string.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_textfield.dart';
-import '../login.dart';
+import '../../../config/responsive.dart';
 
-TextEditingController _nameController = TextEditingController();
 TextEditingController _emailController = TextEditingController();
 TextEditingController _passwordController = TextEditingController();
 GlobalKey<FormState> formKey = GlobalKey();
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,14 +47,14 @@ class SignUp extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        CREATEACCOUNT,
+                        HELLOAGIN,
                         style: const TextStyle(
                             color: black,
                             fontSize: 28,
                             fontWeight: FontWeight.w700),
                       ),
                       Text(
-                        LETSCREATE,
+                        WELCOMBACK,
                         style: const TextStyle(
                           color: gray,
                           fontSize: 16,
@@ -63,24 +63,6 @@ class SignUp extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
-                Text(
-                  YOURNAME,
-                  style: const TextStyle(
-                      color: black, fontWeight: FontWeight.w600, fontSize: 16),
-                ),
-                Padding(
-                  padding: topAndButtomPadding(0.008, 0.03),
-                  child: CustomTextField(
-                      controller: _nameController,
-                      fillColor: white,
-                      hintText: ENTERNAME,
-                      keyboardType: TextInputType.name,
-                      maxLines: 1,
-                      obscureText: false,
-                      onTap: () {},
-                      prefix: null,
-                      suffix: null),
                 ),
                 Text(
                   YOUREMAIL,
@@ -117,6 +99,16 @@ class SignUp extends StatelessWidget {
                       onTap: () {},
                       prefix: null,
                       suffix:Icon(Icons.visibility) ),
+                ),
+                Row(
+                     children: [
+                      Spacer(),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> const RexoveryPassword()));
+                        },
+                        child: Text(RecoveryPASSWORD,style:const TextStyle(color: gray,fontSize: 12),))
+                     ],
                 ),
                 Padding(
                   padding:
@@ -175,11 +167,11 @@ class SignUp extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(ALLREADYHAVEACCOUNT),
+                    Text(DONTHAVEACCOUNT),
                     Padding(
                       padding: onlyLeftPadding(0.008),
                       child: InkWell(onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Login()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const SignUp()));
                       },child: Text(SIGNUP,style: TextStyle(fontWeight: FontWeight.w700),)),
                     ),
                   ],

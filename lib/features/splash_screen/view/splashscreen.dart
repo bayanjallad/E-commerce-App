@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import '../../../config/responsive.dart';
 import '../../../core/resources/color.dart';
 import '../../../core/resources/string.dart';
@@ -42,11 +42,11 @@ class _SplashscreenPageState extends State<SplashScreenPage> {
           children: [
             Text(
               LAZA,
-              style: GoogleFonts.allura(
-                fontSize: 80,
-                color: black,
-                fontWeight: FontWeight.bold
-              ),
+              // style: GoogleFonts.allura(
+              //   fontSize: 80,
+              //   color: black,
+              //   fontWeight: FontWeight.bold
+              // ),
             ),
           ],
         ),

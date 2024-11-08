@@ -12,7 +12,7 @@ class FirstScreen extends StatelessWidget {
       children: [
         Padding(
           padding: onlyTopPadding(0.2),
-          child: ClipOval(clipBehavior: Clip.antiAlias,child: Image.asset("images/onbording1.jpg")),
+          child: ClipOval(clipBehavior: Clip.antiAlias,child: Image.asset("assets/images/onbording1.jpg")),
         ),
         Padding(
           padding: onlyTopPadding(0.02),
