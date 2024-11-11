@@ -10,9 +10,9 @@ class ThirdScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
+         Padding(
           padding: onlyTopPadding(0.2),
-          child: Image.asset("assets/images/onbording3.png"),
+          child: ClipOval(clipBehavior: Clip.antiAlias,child: Image.asset("assets/images/onbording1.jpg")),
         ),
         Padding(
           padding: onlyTopPadding(0.02),
