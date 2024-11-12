@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     initResponsive(context);
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  SplashScreenPage(),
+      home:SplashScreenPage() ,
     );
   }
 }
