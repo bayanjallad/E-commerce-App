@@ -1,11 +1,12 @@
-import 'package:e_commerce_app/config/responsive.dart';
 import 'package:flutter/material.dart';
+import '../../../../config/responsive.dart';
 import '../../../../core/resources/color.dart';
 import '../../../../core/resources/padding.dart';
 import '../../../../core/resources/string.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_textfield.dart';
 import '../login.dart';
+
 
 TextEditingController _nameController = TextEditingController();
 TextEditingController _emailController = TextEditingController();
@@ -23,7 +24,7 @@ class SignUp extends StatelessWidget {
         child: Padding(
           padding: leftAndRightPadding(0.05, 0.05),
           child: Form(
-              key: formKey,
+            key: formKey,
             child: ListView(
               children: [
                 Row(
@@ -116,14 +117,14 @@ class SignUp extends StatelessWidget {
                       obscureText: true,
                       onTap: () {},
                       prefix: null,
-                      suffix:Icon(Icons.visibility) ),
+                      suffix: Icon(Icons.visibility)),
                 ),
                 Padding(
-                  padding:
-                      topAndButtomAndLeftAndRightPadding(0.05, 0.001, 0.04, 0.04),
+                  padding: topAndButtomAndLeftAndRightPadding(
+                      0.05, 0.001, 0.04, 0.04),
                   child: CustomButton(
                     Hight: screenHight * 0.07,
-                    Riduse: 20,
+                    Riduse: 100,
                     Width: screenWidth * 0.89,
                     Elevated: 2,
                     OnPressed: () {
@@ -131,6 +132,7 @@ class SignUp extends StatelessWidget {
                         return;
                       }
                       formKey.currentState!.save();
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage(), ));
                     },
                     borderSide: gray,
                     color: primaryColor,
@@ -147,8 +149,8 @@ class SignUp extends StatelessWidget {
                   padding: topAndButtomAndLeftAndRightPadding(
                       0.025, 0.015, 0.04, 0.04),
                   child: CustomButton(
-                    Hight: screenHight * 0.07,
-                    Riduse: 20,
+                    Hight: screenHight * 0.071,
+                    Riduse: 100,
                     Width: screenWidth * 0.89,
                     Elevated: 2,
                     OnPressed: () {},
@@ -181,6 +183,7 @@ class SignUp extends StatelessWidget {
                       child: InkWell(onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>const Login()));
                       },child: Text(SIGNUP,style: TextStyle(fontWeight: FontWeight.w700),)),
+
                     ),
                   ],
                 )

@@ -7,24 +7,30 @@ class SecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: onlyTopPadding(0.2),
-          child: Image.asset("assets/images/onbording2.png"),
-        ),
-        Padding(
-          padding: onlyTopPadding(0.02),
-          child: Text("Welcom To our shopping"),
-        ),
-        Padding(
-          padding: onlyTopPadding(0.02),
-          child: Text(
-            "  you can always shopping here\n online without go to shopping \n  and west your time",
-            style: TextStyle(color: gray),
+
+    return 
+  Container(
+      foregroundDecoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/onbording2.jpg"))),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          const Text(
+            "Welcome To Your Online Store",
+            style: TextStyle(
+                color: black, fontSize: 20, fontWeight: FontWeight.w600),
           ),
-        ),
-      ],
+          Padding(
+            padding: topAndButtomPadding(0.025, 0.03),
+            child: const Text(
+              "you can always shopping here online \nwithout go to shopping \nand west your time",
+              style: TextStyle(
+                  color: gray, fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
