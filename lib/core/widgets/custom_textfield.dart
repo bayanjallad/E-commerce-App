@@ -43,23 +43,25 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText!,
         onTap: onTap,
         decoration: InputDecoration(
+          suffixIcon: suffix,
+          prefixIcon: prefix,
           hintText: hintText,
           filled: true,
           fillColor: white,
           errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(50),
               borderSide:
                   const BorderSide(color: red, width: 0.6, strokeAlign: 2)),
           enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(50),
               borderSide:
                   const BorderSide(color: white, width: 0.6, strokeAlign: 2)),
           focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide:
-                  const BorderSide(color: primaryColor, width: 0.6, strokeAlign: 2)),
+              borderRadius: BorderRadius.circular(50),
+              borderSide: const BorderSide(
+                  color: primaryColor, width: 0.6, strokeAlign: 2)),
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(50),
               borderSide: const BorderSide(
                   color: primaryColor, width: 0.6, strokeAlign: 2)),
         ));
