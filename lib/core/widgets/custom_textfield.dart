@@ -48,7 +48,6 @@ class CustomTextField extends StatelessWidget {
           hintText: hintText,
           filled: true,
           fillColor: white,
-          prefixIcon: prefix,
           errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(50),
               borderSide:

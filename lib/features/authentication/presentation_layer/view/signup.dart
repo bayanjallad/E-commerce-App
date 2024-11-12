@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/home/presentation_layer/view/home_page.dart';
 import 'package:flutter/material.dart';
 import '../../../../config/responsive.dart';
 import '../../../../core/resources/color.dart';
@@ -5,6 +6,7 @@ import '../../../../core/resources/padding.dart';
 import '../../../../core/resources/string.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_textfield.dart';
+import '../../../home/home_view.dart';
 import '../login.dart';
 
 
@@ -132,7 +134,7 @@ class SignUp extends StatelessWidget {
                         return;
                       }
                       formKey.currentState!.save();
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage(), ));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage() ));
                     },
                     borderSide: gray,
                     color: primaryColor,
