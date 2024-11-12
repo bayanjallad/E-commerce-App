@@ -8,6 +8,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+
     return 
   Container(
       foregroundDecoration: const BoxDecoration(
@@ -28,6 +29,7 @@ class SecondScreen extends StatelessWidget {
               style: TextStyle(
                   color: gray, fontSize: 16, fontWeight: FontWeight.w600),
             ),
+
           ),
         ],
       ),

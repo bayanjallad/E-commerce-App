@@ -18,6 +18,7 @@ String YOURPASSWORD="Password";
 String ENTERNAME= "Enter Your Name";
 String ENTEREMAIL= "Enter Your Email";
 String ENTERPASSWORD= "Enter Your Password";
+String ENTERPHON= "Enter your Phone";
 String SIGNINGOOGLE="Sign in with google";
 String ALLREADYHAVEACCOUNT="Already have an account ?";
   
@@ -29,7 +30,12 @@ String RecoveryPASSWORD="Recovery Password";
 String VERIFICATION="Please Enter Your Email Address To Recieve a Verification Code";
 String CONTINUE ="Continue";
 
+
+//details screen
+String ADDTOCART = "Add To Cart";
+
 //Home Screen
 String SEARCH= "Click Her to Scerch";
 String POPULARPRODUCTS=  "Popular Products";
+
 
