@@ -19,6 +19,7 @@ class ProfileView extends StatelessWidget {
       body: SafeArea(
         child: Padding(padding:leftAndRightPadding(0.05, 0.05),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
               Row(
                   children: [
@@ -45,7 +46,7 @@ class ProfileView extends StatelessWidget {
                         },
                         icon: Padding(
                           padding: onlyLeftPadding(0),
-                          child: const Icon(Icons.edit),
+                          child: const Icon(Icons.edit_outlined,color: primaryColor,),
                         ),
                       ),
                     )
@@ -54,14 +55,21 @@ class ProfileView extends StatelessWidget {
            const SizedBox(
               height: 130,
             ),
-            ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-          child:const Image(
-        image: NetworkImage('https://th.bing.com/th/id/OIP.hGSCbXlcOjL_9mmzerqAbQHaHa?rs=1&pid=ImgDetMain'),
-        width:100 ,
-        height: 150,
-        ),
-      ),
+            Center(
+              child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child:const Image(
+                    image: NetworkImage('https://th.bing.com/th/id/OIP.hGSCbXlcOjL_9mmzerqAbQHaHa?rs=1&pid=ImgDetMain'),
+                    width:100 ,
+                    height: 150,
+                    ),
+                  ),
+            ),
+      Text(
+                  YOUREMAIL,
+                  style: const TextStyle(
+                      color: black, fontWeight: FontWeight.w600, fontSize: 16),
+                ),
     Padding(
                   padding: topAndButtomPadding(0.008, 0.03),
                   child: CustomTextField(
@@ -75,6 +83,11 @@ class ProfileView extends StatelessWidget {
                       prefix: null,
                       suffix: null),
                 ),
+                Text(
+                 YOURPHONE ,
+                  style: const TextStyle(
+                      color: black, fontWeight: FontWeight.w600, fontSize: 16),
+                ),
                          Padding(
                   padding: topAndButtomPadding(0.008, 0.03),
                   child: CustomTextField(
@@ -87,6 +100,11 @@ class ProfileView extends StatelessWidget {
                       onTap: () {},
                       prefix: null,
                       suffix: null),
+                ),
+                Text(
+                  YOURPASSWORD,
+                  style: const TextStyle(
+                      color: black, fontWeight: FontWeight.w600, fontSize: 16),
                 ),
                        Padding(
                   padding: topAndButtomPadding(0.008, 0.03),

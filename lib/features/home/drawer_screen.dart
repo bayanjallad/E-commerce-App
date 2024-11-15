@@ -1,5 +1,4 @@
-import 'package:e_commerce_app/features/profile/profile_view.dart';
-import 'package:e_commerce_app/features/setting/setting_view.dart';
+import 'package:e_commerce_app/core/resources/color.dart';
 import 'package:flutter/material.dart';
 
 class DrawerScreen extends StatelessWidget {
@@ -8,67 +7,74 @@ class DrawerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        child: Container(
-          color: Colors.blueGrey[300],
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              UserAccountsDrawerHeader(
-          accountEmail: const Text('eman@gmail.com'), // keep blank text because email is required
-          accountName: Container(
-            width: 70,
-            height: 70,
-            decoration: const BoxDecoration(shape: BoxShape.circle),
-            child: const CircleAvatar(
-              backgroundColor: Colors.deepPurpleAccent,
-              child: Icon(
-                Icons.check,
-              ),
-            ),
-          ),
-        ),
-              ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text("Home"),
-              onTap: () {},
-            ),
+        child: ListView(
+          padding: const EdgeInsets.all(0),
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: primaryColor,
+              ), //BoxDecoration
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: primaryColor),
+                accountName: Text(
+                  "Abhishek Mishra",
+                  style: TextStyle(fontSize: 18),
+                ),
+                accountEmail: Text("abhishekm977@gmail.com"),
+                currentAccountPictureSize: Size.square(50),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 165, 255, 137),
+                  child: Text(
+                    "E",
+                    style: TextStyle(fontSize: 30.0, color: Colors.blue),
+                  ), //Text
+                ), //circleAvatar
+              ), //UserAccountDrawerHeader
+            ), //DrawerHeader
             ListTile(
-              leading:const Icon(Icons.notifications_none),
-              title:const Text("Notification"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.production_quantity_limits_rounded),
-              title:const Text("Products"),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.online_prediction_sharp),
-              title:const Text("Orders"),
-              onTap: () {},
-            ),
-             ListTile(
-              leading:const Icon(Icons.person_outline),
-              title:const Text("Profile"),
+              leading: const Icon(Icons.person),
+              title: const Text(' My Profile '),
               onTap: () {
-                 Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileView()));
+                Navigator.pop(context);
               },
             ),
-             ListTile(
-              leading:const Icon(Icons.badge_outlined),
-              title: const Text("My Cart"),
-              onTap: () {},
-            ),
-             ListTile(
-              leading:const Icon(Icons.settings_outlined),
-              title: const Text("Setting"),
+            ListTile(
+              leading: const Icon(Icons.home_filled),
+              title: const Text('Home'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingView()));
+                Navigator.pop(context);
               },
             ),
-            ],
-          ),
+            ListTile(
+              leading: const Icon(Icons.favorite_border),
+              title: const Text(' Favourite '),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.shopping_bag_outlined),
+              title: const Text('  Carts '),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.add_alert_rounded),
+              title: const Text(' Notifcation '),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('LogOut'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
         ),
-      );
+      ); //Drawer;
   }
 }

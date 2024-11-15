@@ -7,7 +7,8 @@ import '../../../../core/resources/string.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_textfield.dart';
 import '../../../config/responsive.dart';
-import '../../home/home_view.dart';
+import '../../home/first_view.dart';
+import '../../home/home_page_details.dart';
 import '../../home/presentation_layer/view/home_page.dart';
 
 TextEditingController _emailController = TextEditingController();
@@ -122,7 +123,8 @@ class Login extends StatelessWidget {
                     Elevated: 2,
                     OnPressed: () {
                       if (!formKey.currentState!.validate()) {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage() ));
+                      //  Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage() ));
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=> const FirstView() ));
                         return;
                       }
                       formKey.currentState!.save();

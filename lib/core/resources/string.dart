@@ -15,6 +15,7 @@ String LETSCREATE= "Let’s Create Account Together";
 String YOURNAME= "Name";
 String YOUREMAIL= "Email";
 String YOURPASSWORD="Password";
+String YOURPHONE="Phone";
 String ENTERNAME= "Enter Your Name";
 String ENTEREMAIL= "Enter Your Email";
 String ENTERPASSWORD= "Enter Your Password";

@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/features/notification/presintation/view/notification_view.dart';
+import 'package:e_commerce_app/features/profile/profile_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/cart/presentaion_layer/view/cart_page.dart';
@@ -14,7 +16,7 @@ class ButtomNavBar extends StatefulWidget {
 }
 
 class _ButtomNavBarState extends State<ButtomNavBar> {
-  List pages=[HomePage(),FavouritePage(),CartPage(),FavouritePage(),CartPage()];
+  List pages=[HomePage(),FavouritePage(),CartPage(),NotificationView(),ProfileView()];
   int selectedIndex=0;
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import '../../../../core/resources/padding.dart';
 import '../../../../core/resources/string.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_textfield.dart';
-import '../../../home/home_view.dart';
+import '../../../home/home_page_details.dart';
 import '../login.dart';
 
 

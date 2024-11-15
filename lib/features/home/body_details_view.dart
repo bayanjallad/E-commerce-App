@@ -6,6 +6,7 @@ import '../../core/resources/color.dart';
 import '../../core/resources/padding.dart';
 import '../../core/resources/string.dart';
 import '../../core/widgets/custom_button.dart';
+import '../../core/widgets/custom_row.dart';
 
 class BodyDetailsView extends StatefulWidget {
    BodyDetailsView({super.key});
@@ -30,71 +31,61 @@ class _BodyDetailsViewState extends State<BodyDetailsView> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      key: _scaffoldKey,
-      body: Column(
+      backgroundColor: backgroundColor,
+      body: Padding(
+        padding: leftAndRightPadding(0.03, 0.03),
+        child: SafeArea(
+          child: Column(           
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-                Padding(
-                padding: EdgeInsets.all(15),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: (){
-                       _toggleDrawer();
-                      } ,
-                      child: const Icon(Icons.menu)),
-                    const Spacer(),
-                    const Text('Salla',style: TextStyle(color: black,fontSize: 16),),
-                    const Spacer(),
-                    const Icon(Icons.card_travel)
-                  ],
+              InkWell(onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const DrawerScreen()));
+              },
+                child: CustomRow(
+                  prefixfunction: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const DrawerScreen()));
+                  },
+                  prefeixIcon: Icons.more_horiz,
+                  suffix: Icon(Icons.shopping_bag_outlined),
+                  text: LAZA,
+                  suffixfunction: () {},
                 ),
               ),
-              Container(
-                height: screenHight * 0.28,
-                child: Padding(
-                        padding: onlyTopPadding(0.02),
-                        child: ClipOval(clipBehavior: Clip.antiAlias,child: Image.asset("assets/images/shoes.png")),
-                      ),
+              Align(
+                  alignment: Alignment.center,
+                  child: Image.asset("assets/images/shose.png",
+                     fit: BoxFit.fill,
+                       height: screenHight * 0.35   
+                      )),
+              const Text("BEST SELLER",
+                  style: TextStyle(
+                      color: primaryColor,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500)),
+              Padding(
+              padding:topAndButtomPadding(0.005, 0.005) ,
+                child: const Text("Nike Air Jordan",
+                    style: TextStyle(
+                        color: black,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20)),
               ),
-             Container(
-              height: screenHight * 0.08,
-              //color: Colors.amber,
-              child:  Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                  const Text('Best Seller',style: TextStyle(color: Colors.blue,fontSize: 16),),
-                    Padding(
-                      padding: topAndButtomPadding(0.005, 0.005),
-                      child: const Text('Nike Air Jordan ',style: TextStyle(color: black,fontSize: 16),),
-                    ),
-                     const Text(' 967.800',style: TextStyle(color: black,fontSize: 16),),
-                  ],),
-                  Spacer(),
-                 const Icon(Icons.favorite_border)
-                ],
-              )),
+                      const Text('Air Jordan is an American brand of basketball shoes athletic, casual, and style clothing produced by Nike....',style: TextStyle(color: gray,fontSize: 16),),
+              Spacer(),
              Padding(
-               padding: topAndButtomPadding(0.008, 0),
-               child: const Text('Air Jordan is an American brand of basketball shoes athletic, casual, and style clothing produced by Nike....',style: TextStyle(color: gray,fontSize: 16),),
-             ),
-             Spacer(),
-             Padding(
-               padding: topAndButtomPadding(0, 0.008),
+               padding: topAndButtomPadding(0, 0.04),
                child: Row(
                  children: [
                   const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Price',style: TextStyle(color: gray,fontSize: 15),),
-                      Text('849.69',style: TextStyle(color: black,fontSize: 20,fontWeight: FontWeight.w600))
+                      Text("\$493.00",style: TextStyle(color: black,fontSize: 20,fontWeight: FontWeight.w600))
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                    CustomButton(
                             Hight: screenHight * 0.05,
                             Riduse: 20,
@@ -115,11 +106,12 @@ class _BodyDetailsViewState extends State<BodyDetailsView> {
                           ),
                  ],
                ),
-             )
+             ),
+             
             ],
           ),
-
-          drawer: DrawerScreen()
+        ),
+      ),
     );
   }
 }

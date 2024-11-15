@@ -8,8 +8,9 @@ class CustomRow extends StatelessWidget {
   final Widget? suffix;
   final String? text;
   final Function()? suffixfunction;
+  final Function()? prefixfunction;
   const CustomRow(
-      {super.key, this.prefeixIcon, this.text,  this.suffixfunction, this.suffix});
+      {super.key, this.prefeixIcon, this.text,  this.suffixfunction, this.suffix,this.prefixfunction});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,8 @@ class CustomRow extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              Navigator.pop(context);
+               prefixfunction!;
+            //  Navigator.pop(context);
             },
             child: Container(
               width: 40,

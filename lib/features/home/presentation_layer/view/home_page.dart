@@ -3,10 +3,12 @@
 import 'package:e_commerce_app/config/responsive.dart';
 import 'package:e_commerce_app/core/resources/padding.dart';
 import 'package:e_commerce_app/core/resources/string.dart';
+import 'package:e_commerce_app/features/home/drawer_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/resources/color.dart';
 import '../../../../core/widgets/custom_row.dart';
 import '../../../../core/widgets/custom_textField.dart';
+import '../../home_page_details.dart';
 
 
 
@@ -29,6 +31,9 @@ class HomePage extends StatelessWidget {
                 suffix: Icon(Icons.shopping_bag_outlined),
                 text: LAZA,
                 suffixfunction: () {},
+                prefixfunction: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DrawerScreen()));
+                },
               ),
               CustomTextField(
                 fillColor: white,
@@ -87,6 +92,7 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePageDetails()));
                         print("--------------");
                       },
                       child: Container(
